@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3B3F8F"/>
+      <stop offset="0.55" stop-color="#2A2560"/>
+      <stop offset="1" stop-color="#17143A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.68" cy="0.3" r="0.55">
+      <stop offset="0" stop-color="#FF9F5A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FF9F5A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="back" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7FB2FF"/>
+      <stop offset="1" stop-color="#4C82E6"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9CCFF"/>
+      <stop offset="1" stop-color="#6A9CF2"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE3B0"/>
+      <stop offset="0.5" stop-color="#FFB15C"/>
+      <stop offset="1" stop-color="#FF7A3D"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0A0830" flood-opacity="0.45"/>
+    </filter>
+    <filter id="sglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.10"/><stop offset="0.5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="sq"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>
+  </defs>
+
+  <!-- squircle -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  </g>
+  <g clip-path="url(#sq)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#glow)"/>
+    <rect x="100" y="100" width="824" height="824" fill="url(#hl)"/>
+  </g>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="184" fill="none" stroke="#fff" stroke-opacity="0.12" stroke-width="3"/>
+
+  <!-- folder -->
+  <g filter="url(#soft)">
+    <path d="M250 400 Q250 360 290 360 L430 360 Q452 360 466 378 L492 410 L734 410 Q774 410 774 450 L774 720 Q774 760 734 760 L290 760 Q250 760 250 720 Z" fill="url(#back)"/>
+    <path d="M250 500 Q250 462 290 462 L734 462 Q774 462 774 500 L774 720 Q774 760 734 760 L290 760 Q250 760 250 720 Z" fill="url(#front)"/>
+    <path d="M290 462 L734 462 Q774 462 774 500 L774 506 Q774 472 734 472 L290 472 Q250 472 250 506 L250 500 Q250 462 290 462 Z" fill="#fff" opacity="0.45"/>
+  </g>
+  <!-- prompt line on folder -->
+  <path d="M326 588 L356 607 L326 626" fill="none" stroke="#2A2560" stroke-opacity="0.6" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="392" y="596" width="230" height="22" rx="11" fill="#2A2560" opacity="0.35"/>
+  <rect x="392" y="650" width="150" height="22" rx="11" fill="#2A2560" opacity="0.22"/>
+
+  <!-- sparkles -->
+  <g filter="url(#sglow)">
+    <path d="M700 190 C712 270 740 298 820 310 C740 322 712 350 700 430 C688 350 660 322 580 310 C660 298 688 270 700 190 Z" fill="url(#spark)"/>
+    <path d="M560 180 C565 212 576 223 608 228 C576 233 565 244 560 276 C555 244 544 233 512 228 C544 223 555 212 560 180 Z" fill="url(#spark)" opacity="0.9"/>
+  </g>
+</svg>
